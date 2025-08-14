@@ -512,7 +512,7 @@ export default function HomePage() {
                 title: "Socially",
                 description: t("projects.socially.description"),
                 tech: ["TypeScript", "React", "Node.js"],
-                image: "https://raw.githubusercontent.com/daviramosds/socially/main/media/preview.gif",
+                image: "/socially.gif",
                 github: "https://github.com/daviramosds/socially",
               },
               {
