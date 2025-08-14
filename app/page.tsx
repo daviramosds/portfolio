@@ -6,7 +6,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslation } from "@/components/language-toggle"
-import ScrollReveal from "scrollreveal"
 import {
   Github,
   Linkedin,
@@ -42,105 +41,127 @@ export default function HomePage() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
   useEffect(() => {
-    const sr = ScrollReveal({
-      origin: "bottom",
-      distance: "60px",
-      duration: 1000,
-      delay: 100,
-      easing: "cubic-bezier(0.5, 0, 0, 1)",
-      reset: false,
-    })
+    if (typeof window === "undefined") return
 
-    // Hero section animations
-    sr.reveal(".hero-content", {
-      origin: "left",
-      distance: "100px",
-      duration: 1200,
-    })
+    const initScrollReveal = async () => {
+      try {
+        const ScrollReveal = (await import("scrollreveal")).default
 
-    sr.reveal(".hero-image", {
-      origin: "right",
-      distance: "100px",
-      duration: 1200,
-      delay: 200,
-    })
+        const sr = ScrollReveal({
+          origin: "bottom",
+          distance: "60px",
+          duration: 1000,
+          delay: 100,
+          easing: "cubic-bezier(0.5, 0, 0, 1)",
+          reset: false,
+        })
 
-    // Stagger animations for hero elements
-    sr.reveal(".hero-greeting", { delay: 300 })
-    sr.reveal(".hero-name", { delay: 400 })
-    sr.reveal(".hero-title", { delay: 500 })
-    sr.reveal(".hero-description", { delay: 600 })
-    sr.reveal(".hero-skills", { delay: 700 })
-    sr.reveal(".hero-cta", { delay: 800 })
-    sr.reveal(".hero-social", { delay: 900 })
+        // Hero section animations
+        sr.reveal(".hero-content", {
+          origin: "left",
+          distance: "100px",
+          duration: 1200,
+        })
 
-    // Section titles
-    sr.reveal(".section-title", {
-      origin: "top",
-      distance: "50px",
-      duration: 800,
-    })
+        sr.reveal(".hero-image", {
+          origin: "right",
+          distance: "100px",
+          duration: 1200,
+          delay: 200,
+        })
 
-    // Service cards with stagger
-    sr.reveal(".service-card", {
-      origin: "bottom",
-      distance: "80px",
-      duration: 1000,
-      interval: 200,
-    })
+        // Stagger animations for hero elements
+        sr.reveal(".hero-greeting", { delay: 300 })
+        sr.reveal(".hero-name", { delay: 400 })
+        sr.reveal(".hero-title", { delay: 500 })
+        sr.reveal(".hero-description", { delay: 600 })
+        sr.reveal(".hero-skills", { delay: 700 })
+        sr.reveal(".hero-cta", { delay: 800 })
+        sr.reveal(".hero-social", { delay: 900 })
 
-    // Project cards with different origins
-    sr.reveal(".project-card:nth-child(1)", {
-      origin: "left",
-      distance: "100px",
-      duration: 1000,
-    })
+        // Section titles
+        sr.reveal(".section-title", {
+          origin: "top",
+          distance: "50px",
+          duration: 800,
+        })
 
-    sr.reveal(".project-card:nth-child(2)", {
-      origin: "bottom",
-      distance: "100px",
-      duration: 1000,
-      delay: 200,
-    })
+        // Service cards with stagger
+        sr.reveal(".service-card", {
+          origin: "bottom",
+          distance: "80px",
+          duration: 1000,
+          interval: 200,
+        })
 
-    sr.reveal(".project-card:nth-child(3)", {
-      origin: "right",
-      distance: "100px",
-      duration: 1000,
-      delay: 400,
-    })
+        // Project cards with different origins
+        sr.reveal(".project-card:nth-child(1)", {
+          origin: "left",
+          distance: "100px",
+          duration: 1000,
+        })
 
-    // Contact section
-    sr.reveal(".contact-info", {
-      origin: "left",
-      distance: "80px",
-      duration: 1000,
-    })
+        sr.reveal(".project-card:nth-child(2)", {
+          origin: "bottom",
+          distance: "100px",
+          duration: 1000,
+          delay: 200,
+        })
 
-    sr.reveal(".contact-form", {
-      origin: "right",
-      distance: "80px",
-      duration: 1000,
-      delay: 200,
-    })
+        sr.reveal(".project-card:nth-child(3)", {
+          origin: "right",
+          distance: "100px",
+          duration: 1000,
+          delay: 400,
+        })
 
-    // Contact info items with stagger
-    sr.reveal(".contact-item", {
-      origin: "left",
-      distance: "50px",
-      duration: 800,
-      interval: 150,
-    })
+        // Contact section
+        sr.reveal(".contact-info", {
+          origin: "left",
+          distance: "80px",
+          duration: 1000,
+        })
 
-    // Footer
-    sr.reveal("footer", {
-      origin: "bottom",
-      distance: "30px",
-      duration: 800,
+        sr.reveal(".contact-form", {
+          origin: "right",
+          distance: "80px",
+          duration: 1000,
+          delay: 200,
+        })
+
+        // Contact info items with stagger
+        sr.reveal(".contact-item", {
+          origin: "left",
+          distance: "50px",
+          duration: 800,
+          interval: 150,
+        })
+
+        // Footer
+        sr.reveal("footer", {
+          origin: "bottom",
+          distance: "30px",
+          duration: 800,
+        })
+
+        return () => {
+          sr.destroy()
+        }
+      } catch (error) {
+        console.warn("ScrollReveal failed to load:", error)
+      }
+    }
+
+    let cleanup: (() => void) | undefined
+
+    initScrollReveal().then((cleanupFn) => {
+      cleanup = cleanupFn
     })
 
     return () => {
-      sr.destroy()
+      if (cleanup) {
+        cleanup()
+      }
     }
   }, [])
 
