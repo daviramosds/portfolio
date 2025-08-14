@@ -418,7 +418,7 @@ export default function HomePage() {
           <div className="relative hero-image order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
               <Image
-                src="https://github.com/daviramosds.png"
+                src="/profile.jpg"
                 alt="Davi Ramos - Development and Automation Specialist"
                 fill
                 className="object-cover transition-all duration-500 hover:scale-105 rounded-3xl"
