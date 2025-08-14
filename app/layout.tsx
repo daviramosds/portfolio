@@ -8,9 +8,8 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageToggle, LanguageProvider } from "@/components/language-toggle"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "Davi Ramos",
+  description: "I craft digital solutions that streamline workflows and bring ideas to life. Specializing in modern web development, process automation, and creating seamless user experiences."
 }
 
 export default function RootLayout({
