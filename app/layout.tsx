@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: "Davi Ramos",
   title: {
-    default: "Davi Ramos — Development • Automation • DevOps",
+    default: "Davi Ramos — Development • Automation",
     template: "%s | Davi Ramos",
   },
   description:
@@ -48,10 +48,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL + "/",
-    title: "Davi Ramos — Development • Automation • DevOps",
+    title: "Davi Ramos — Development • Automation",
     siteName: "Davi Ramos",
-    description:
-      "Modern web development, automation, and DevOps to turn ideas into reliable products.",
+    description: "Modern web development, automation, and DevOps to turn ideas into reliable products.",
     locale: "en_US",
     alternateLocale: ["pt_BR"],
     images: [
@@ -119,12 +118,9 @@ html {
               "@type": "Person",
               name: "Davi Ramos",
               url: SITE_URL,
-              jobTitle: "Development, Automation & DevOps Specialist",
+              jobTitle: "Development & Automation Specialist",
               worksFor: { "@type": "Organization", name: "Independent" },
-              sameAs: [
-                "https://github.com/davirds",
-                "https://www.linkedin.com/in/davirds/",
-              ],
+              sameAs: ["https://github.com/davirds", "https://www.linkedin.com/in/davirds/"],
             }),
           }}
         />

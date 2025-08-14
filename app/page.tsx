@@ -21,7 +21,7 @@ import {
 } from "lucide-react"
 
 export default function HomePage() {
-  const { t } = useTranslation()
+  const { t, language } = useTranslation() // adicionando language do contexto
 
   const [formData, setFormData] = useState({
     name: "",
@@ -176,7 +176,7 @@ export default function HomePage() {
           cardId = "web-dev-card"
         } else if (badgeText.includes("Mobile")) {
           cardId = "mobile-dev-card"
-        } else if (badgeText.includes("Automation")) {
+        } else if (badgeText.includes("Automação") || badgeText.includes("Automation")) {
           cardId = "automation-card"
         } else if (badgeText.includes("DevOps")) {
           cardId = "devops-card"
@@ -318,36 +318,36 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 lg:py-24 relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+      <section className="container mx-auto px-4 py-12 sm:py-16 lg:py-24 relative">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
           {/* Content */}
-          <div className="space-y-8 lg:pr-8 hero-content">
+          <div className="space-y-6 sm:space-y-8 lg:pr-8 hero-content order-2 lg:order-1">
             {/* Status Badge */}
             <div className="flex items-center gap-2 hero-greeting">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse-dot"></div>
               <Badge
                 variant="secondary"
-                className="text-sm font-medium bg-[#3B82F6]/10 text-[#3B82F6] border-[#3B82F6]/20"
+                className="text-xs sm:text-sm font-medium bg-[#3B82F6]/10 text-[#3B82F6] border-[#3B82F6]/20"
               >
                 {t("hero.available")}
               </Badge>
             </div>
 
             {/* Main Heading */}
-            <div className="space-y-3">
-              <p className="text-lg text-muted-foreground font-medium tracking-wide hero-greeting">
+            <div className="space-y-2 sm:space-y-3">
+              <p className="text-base sm:text-lg text-muted-foreground font-medium tracking-wide hero-greeting">
                 {t("hero.greeting")}
               </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight hero-name">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight hero-name leading-tight">
                 <span className="bg-gradient-to-r from-foreground via-[#3B82F6] to-[#3B82F6] bg-clip-text text-transparent animate-gradient">
                   Davi Ramos
                 </span>
               </h1>
               <div className="space-y-1">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#3B82F6] hero-title">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-[#3B82F6] hero-title">
                   {t("hero.title")}
                 </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed hero-description">
+                <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed hero-description">
                   {t("hero.description")}
                 </p>
               </div>
@@ -355,11 +355,11 @@ export default function HomePage() {
 
             {/* Skills Tags */}
             <div className="flex flex-wrap gap-2 hero-skills">
-              {["Web", "Mobile", "Automation", "DevOps"].map((skill, index) => (
+              {["Web", "Mobile", language === "pt" ? "Automação" : "Automation", "DevOps"].map((skill, index) => (
                 <Badge
                   key={skill}
                   variant="outline"
-                  className="text-sm border-[#3B82F6]/30 text-[#3B82F6] hover:bg-[#3B82F6]/10 cursor-pointer transition-all duration-300 hover:scale-105"
+                  className="text-xs sm:text-sm border-[#3B82F6]/30 text-[#3B82F6] hover:bg-[#3B82F6]/10 cursor-pointer transition-all duration-300 hover:scale-105"
                   onClick={(e) => scrollToSection("what-i-do", (e.target as HTMLElement).textContent || "")}
                 >
                   {skill}
@@ -368,10 +368,10 @@ export default function HomePage() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 hero-cta">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 hero-cta">
               <Button
                 size="lg"
-                className="group bg-[#3B82F6] hover:bg-[#3B82F6]/90 cursor-pointer transition-all duration-300 hover:scale-105"
+                className="group bg-[#3B82F6] hover:bg-[#3B82F6]/90 cursor-pointer transition-all duration-300 hover:scale-105 w-full sm:w-auto"
                 onClick={() => scrollToSection("featured-projects", "")}
               >
                 {t("hero.viewWork")}
@@ -380,8 +380,8 @@ export default function HomePage() {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4 pt-4 hero-social">
-              <p className="text-sm text-muted-foreground">{t("hero.connectWith")}</p>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 pt-2 sm:pt-4 hero-social">
+              <p className="text-xs sm:text-sm text-muted-foreground">{t("hero.connectWith")}</p>
               <div className="flex gap-3">
                 {[
                   { href: "https://github.com/daviramosds", icon: Github, label: "GitHub" },
@@ -392,11 +392,11 @@ export default function HomePage() {
                     key={label}
                     variant="ghost"
                     size="icon"
-                    className="hover:scale-110 transition-all duration-300 hover:text-[#3B82F6] cursor-pointer"
+                    className="hover:scale-110 transition-all duration-300 hover:text-[#3B82F6] cursor-pointer h-8 w-8 sm:h-10 sm:w-10"
                     asChild
                   >
                     <a href={href} target="_blank" rel="noopener noreferrer">
-                      <Icon className="h-5 w-5" />
+                      <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                       <span className="sr-only">{label}</span>
                     </a>
                   </Button>
@@ -406,8 +406,8 @@ export default function HomePage() {
           </div>
 
           {/* Profile Image */}
-          <div className="relative hero-image">
-            <div className="relative z-10 w-80 h-80 lg:w-96 lg:h-96">
+          <div className="relative hero-image order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
               <Image
                 src="https://github.com/daviramosds.png"
                 alt="Davi Ramos - Development and Automation Specialist"
@@ -416,14 +416,14 @@ export default function HomePage() {
                 priority
               />
 
-              <div className="absolute -bottom-4 -left-4 bg-card border rounded-lg p-4 shadow-lg backdrop-blur-sm z-50">
-                <div className="text-2xl font-bold text-[#3B82F6]">5+</div>
-                <div className="text-sm text-muted-foreground">{t("hero.yearsExperience")}</div>
+              <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-card border rounded-lg p-2 sm:p-4 shadow-lg backdrop-blur-sm z-50">
+                <div className="text-lg sm:text-2xl font-bold text-[#3B82F6]">5+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">{t("hero.yearsExperience")}</div>
               </div>
 
-              <div className="absolute -top-4 -right-4 bg-card border rounded-lg p-4 shadow-lg backdrop-blur-sm z-50">
-                <div className="text-2xl font-bold text-[#3B82F6]">50+</div>
-                <div className="text-sm text-muted-foreground">{t("hero.projectsDone")}</div>
+              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-card border rounded-lg p-2 sm:p-4 shadow-lg backdrop-blur-sm z-50">
+                <div className="text-lg sm:text-2xl font-bold text-[#3B82F6]">50+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">{t("hero.projectsDone")}</div>
               </div>
             </div>
           </div>
@@ -511,7 +511,7 @@ export default function HomePage() {
               {
                 title: "Socially",
                 description: t("projects.socially.description"),
-                tech: ["TypeScript", "React", "Node.js"],
+                tech: ["Next.js", "TypeScript", "Node.js"],
                 image: "/socially.gif",
                 github: "https://github.com/daviramosds/socially",
               },
@@ -667,9 +667,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">
-                      {t("contact.form.whatsapp")} <span className="text-red-500">*</span>
-                    </label>
+                    <label className="block text-sm font-medium mb-2">{t("contact.form.whatsapp")}</label>
                     <input
                       type="tel"
                       value={formData.whatsapp}

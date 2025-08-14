@@ -20,7 +20,7 @@ const translations = {
     // Hero Section
     "hero.greeting": "Hello, I'm",
     "hero.name": "Davi Ramos",
-    "hero.title": "Development, Automation & DevOps Specialist",
+    "hero.title": "Development & Automation Specialist",
     "hero.description":
       "I craft digital solutions that streamline workflows and bring ideas to life. Specializing in modern web development, process automation, and creating seamless user experiences.",
     "hero.available": "Available for new projects",
@@ -97,7 +97,7 @@ const translations = {
     // Hero Section
     "hero.greeting": "Olá, eu sou",
     "hero.name": "Davi Ramos",
-    "hero.title": "Especialista em Desenvolvimento, Automação e DevOps",
+    "hero.title": "Especialista em Desenvolvimento e Automação",
     "hero.description":
       "Eu crio soluções digitais que otimizam fluxos de trabalho e dão vida às ideias. Especializado em desenvolvimento web moderno, automação de processos e criação de experiências de usuário perfeitas.",
     "hero.available": "Disponível para novos projetos",
