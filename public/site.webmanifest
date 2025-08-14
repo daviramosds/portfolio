@@ -1,0 +1,29 @@
+{
+  "name": "Davi Ramos — Development • Automation • DevOps",
+  "short_name": "Davi Ramos",
+  "description": "Modern web development, process automation, and DevOps to turn ideas into reliable products.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b0b0b",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "id": "/?source=pwa",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["productivity", "developer-tools", "business"],
+  "prefer_related_applications": false
+}
