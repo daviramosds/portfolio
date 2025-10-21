@@ -7,8 +7,10 @@ import { ThemeProvider } from "next-themes"
 import { LanguageProvider } from "@/components/language-toggle"
 import { ConditionalToggles } from "@/components/conditional-toggles"
 
-const SITE_URL = "https://your-domain.com"
+// CORRIGIDO: URL completa
+const SITE_URL = "https://davirds.dev"
 const OG_IMAGE = "/og-image.jpg" 
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: "Davi Ramos",
@@ -78,16 +80,20 @@ export const metadata: Metadata = {
     shortcut: [{ url: "/favicon.png" }],
   },
   manifest: "/site.webmanifest",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
+  // A CHAVE 'themeColor' FOI MOVIDA DAQUI PARA 'viewport' ABAIXO
 }
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  // CORRIGIDO: Chave 'themeColor' movida para cá e valores preenchidos (baseado no globals.css)
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "hsl(0 0% 100%)" },
+    { media: "(prefers-color-scheme: dark)", color: "hsl(0 0% 9%)" },
+  ],
 }
+
 export default function RootLayout({
   children,
 }: {
@@ -106,13 +112,18 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
+              // CORRIGIDO: URL completa
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Davi Ramos",
               url: SITE_URL,
               jobTitle: "Development & Automation Specialist",
               worksFor: { "@type": "Organization", name: "Independent" },
-              sameAs: ["https://github.com/daviramos"],
+              // CORRIGIDO: URLs completas (baseado na app/page.tsx)
+              sameAs: [
+                "https://github.com/daviramosds",
+                "https://www.linkedin.com/in/daviramosds/",
+              ],
             }),
           }}
         />
