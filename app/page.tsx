@@ -19,6 +19,7 @@ import {
   Zap,
   Server,
 } from "lucide-react"
+import { ProjectsList } from "@/components/projects-list"
 
 export default function HomePage() {
   const { t, language } = useTranslation() // adicionando language do contexto
@@ -507,99 +508,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Projects Section */}
-      <section id="featured-projects" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 section-title">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t("projects.title")}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t("projects.subtitle")}</p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                title: "Socially",
-                description: t("projects.socially.description"),
-                tech: ["Next.js", "TypeScript", "Node.js"],
-                image: "/socially.gif",
-                github: "https://github.com/daviramosds/socially",
-              },
-              {
-                title: "NestJS Microservices",
-                description: t("projects.microservices.description"),
-                tech: ["NestJS", "Docker", "NATS", "SQL"],
-                image: "/microservices-architecture.png",
-                github: "https://github.com/daviramosds/nestjs-microservices-nats-sql-docker",
-              },
-              {
-                title: "Media Renamer",
-                description: t("projects.mediaRenamer.description"),
-                tech: ["Python", "Automation", "File Processing"],
-                image: "/file-automation-tool.png",
-                github: "https://github.com/daviramosds/mediarenamer",
-              },
-            ].map((project, index) => (
-              <div
-                key={index}
-                className="bg-card border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 group hover:scale-105 project-card flex flex-col h-[500px]"
-              >
-                <div className="relative h-48 overflow-hidden flex-shrink-0">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-all duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-semibold mb-2 flex-shrink-0 group-hover:text-[#3B82F6] transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed flex-grow text-sm">{project.description}</p>
-                  <div className="mt-auto flex-shrink-0">
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="secondary"
-                          className="text-xs bg-[#3B82F6]/10 text-[#3B82F6] border-[#3B82F6]/20"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="group/btn cursor-pointer w-full justify-center hover:bg-[#3B82F6]/10 hover:text-[#3B82F6] transition-all duration-300"
-                      asChild
-                    >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        {t("projects.viewProject")}
-                        <ExternalLink className="ml-2 h-3 w-3 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12 section-title">
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-[#3B82F6]/30 text-[#3B82F6] hover:bg-[#3B82F6]/10 bg-transparent cursor-pointer transition-all duration-300 hover:scale-105"
-              asChild
-            >
-              <a href="https://github.com/daviramosds" target="_blank" rel="noopener noreferrer">
-                {t("projects.viewAll")}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 hover:translate-x-1" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ProjectsList />
 
       {/* Let's Work Together Section */}
       <section className="py-20 bg-muted/30">

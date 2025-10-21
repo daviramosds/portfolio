@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "category": "system",
+    "image_url": "/socially.gif",
+    "project_url": "https://github.com/daviramosds/socially",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Node.js"
+    ],
+    "translations": {
+      "en": {
+        "title": "Socially",
+        "description": "A social media web application where users can connect, post, and interact."
+      },
+      "pt": {
+        "title": "Socially",
+        "description": "Uma aplicação web de rede social onde usuários podem se conectar, postar e interagir."
+      }
+    }
+  },
+  {
+    "id": 2,
+    "category": "system",
+    "image_url": "/microservices-architecture.png",
+    "project_url": "https://github.com/daviramosds/nestjs-microservices-nats-sql-docker",
+    "tech": [
+      "NestJS",
+      "Docker",
+      "NATS",
+      "SQL"
+    ],
+    "translations": {
+      "en": {
+        "title": "NestJS Microservices",
+        "description": "A backend project demonstrating microservices architecture using NestJS, NATS, SQL, and Docker."
+      },
+      "pt": {
+        "title": "Microsserviços com NestJS",
+        "description": "Um projeto backend demonstrando arquitetura de microsserviços usando NestJS, NATS, SQL e Docker."
+      }
+    }
+  },
+  {
+    "id": 3,
+    "category": "system",
+    "image_url": "/file-automation-tool.png",
+    "project_url": "https://github.com/daviramosds/mediarenamer",
+    "tech": [
+      "Python",
+      "Automation",
+      "File Processing"
+    ],
+    "translations": {
+      "en": {
+        "title": "Media Renamer",
+        "description": "A Python automation script to batch rename media files based on their metadata."
+      },
+      "pt": {
+        "title": "Renomeador de Mídia",
+        "description": "Um script de automação em Python para renomear arquivos de mídia em lote com base em seus metadados."
+      }
+    }
+  },
+   {
+    "id": 4,
+    "category": "website",
+    "image_url": "bananablue.png",
+    "project_url": "https://bananabluestudio.com/",
+    "tech": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "PHP"
+    ],
+    "translations": {
+      "en": {
+        "title": "BananaBlue Studio",
+        "description": "Landing page for a professional, conversion-focused photography studio serving the Orlando, FL area. Specializing in Real Estate, Vacation Home, Food, and Interior Design, with optimization for platforms like Airbnb, DoorDash, and MLS."
+      },
+      "pt": {
+        "title": "BananaBlue Studio",
+        "description": "Landing page para um estúdio de fotografia profissional focado em conversão, atendendo a região de Orlando, FL. Especializado em Imóveis, Casas de Temporada, Alimentos e Design de Interiores, com otimização para plataformas como Airbnb, DoorDash e MLS."
+      }
+    }
+  },
+  {
+    "id": 5,
+    "category": "website",
+    "image_url": "jerusaweb.png",
+    "project_url": "https://jerusaclaro.com.br/",
+    "tech": [
+      "HTML",
+      "CSS",
+      "Javascript"
+    ],
+    "translations": {
+      "en": {
+        "title": "Landing Page - Jerusa Claro",
+        "description": "Responsive landing page for a psychologist. Developed in html with a focus on performance and SEO."
+      },
+      "pt": {
+        "title": "Landing Page - Jerusa Claro",
+        "description": "Landing page responsiva para uma psicóloga. Desenvolvida em html com foco em performance e SEO."
+      }
+    }
+  },
+ 
+  {
+    "id": 6,
+    "category": "website",
+    "image_url": "matheusweb.png",
+    "project_url": "https://psicologomatheusvieira.com.br/",
+    "tech": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "PHP"
+    ],
+    "translations": {
+      "en": {
+        "title": "Landing Page - Matheus",
+        "description": "Responsive landing page for a psychologist. Developed in html with a focus on performance and SEO."
+      },
+      "pt": {
+        "title": "Landing Page - Matheus",
+        "description": "Landing page responsiva para um psicólogo. Desenvolvida em html com foco em performance e SEO."
+      }
+    }
+  }
+]

@@ -7,13 +7,13 @@ import { ThemeProvider } from "next-themes"
 import { LanguageProvider } from "@/components/language-toggle"
 import { ConditionalToggles } from "@/components/conditional-toggles"
 
-const SITE_URL = "https://your-domain.com" // Substitua pelo seu domínio
+const SITE_URL = "https://your-domain.com"
 const OG_IMAGE = "/og-image.jpg" 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: "Davi Ramos",
   title: {
-    default: "Davi Ramos — Development • Automation",
+    default: "Davi Ramos | Development • Automation",
     template: "%s | Davi Ramos",
   },
   description:
