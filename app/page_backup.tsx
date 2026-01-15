@@ -21,7 +21,7 @@ import {
 } from "lucide-react"
 import { ProjectsList } from "@/components/projects-list"
 
-export default function Home() {
+export default function TestingPage() {
   const { t, language } = useTranslation()
 
   const [formData, setFormData] = useState({
@@ -392,7 +392,7 @@ export default function Home() {
             <div className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
               <Image
                 src="/profile.jpg"
-                alt="Davi Ramos de Sousa - Software Engineer specializing in Backend Engineering, NestJS, TypeScript, Node.js, React, and Automation"
+                alt="Davi Ramos - Development and Automation Specialist"
                 fill
                 className="object-cover transition-all duration-500 hover:scale-105 rounded-3xl"
                 priority

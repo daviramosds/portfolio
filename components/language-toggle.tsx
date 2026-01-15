@@ -11,7 +11,7 @@ export const LanguageContext = React.createContext<{
   t: (key: string) => string
 }>({
   language: "en",
-  setLanguage: () => {},
+  setLanguage: () => { },
   t: (key: string) => key,
 })
 
@@ -20,9 +20,9 @@ const translations = {
     // Hero Section
     "hero.greeting": "Hello, I'm",
     "hero.name": "Davi Ramos",
-    "hero.title": "Development & Automation Specialist",
+    "hero.title": "Software Engineer | Backend & Automation",
     "hero.description":
-      "I craft digital solutions that streamline workflows and bring ideas to life. Specializing in modern web development, process automation, and creating seamless user experiences.",
+      "I build and maintain SaaS products, backend systems, APIs, and automation that support scalable, real-world use cases.",
     "hero.available": "Available for new projects",
     "hero.viewWork": "View My Work",
     "hero.connectWith": "Connect with me:",
@@ -31,23 +31,23 @@ const translations = {
 
     // What I Do Section
     "whatIDo.title": "What I Do",
-    "whatIDo.subtitle": "I specialize in creating digital solutions that drive results and streamline processes.",
-    "whatIDo.webDev.title": "Web Development",
-    "whatIDo.webDev.description":
-      "I create modern, responsive web applications using cutting-edge technologies. From sleek landing pages to complex full-stack applications, I focus on performance, user experience, and clean code architecture.",
-    "whatIDo.mobileDev.title": "Mobile Development",
-    "whatIDo.mobileDev.description":
-      "I develop cross-platform mobile applications using React Native and Expo, delivering native performance across iOS and Android. From concept to app store deployment, I handle the entire mobile development lifecycle.",
+    "whatIDo.subtitle": "I build backend systems, APIs, and automation that support scalable SaaS products.",
+    "whatIDo.backendEngineering.title": "Backend Engineering",
+    "whatIDo.backendEngineering.description":
+      "I design and build backend systems that handle real business logic, data integrity, and scalability. Focused on APIs, authentication, integrations, and long-term maintainability.",
+    "whatIDo.apisIntegrations.title": "APIs & Integrations",
+    "whatIDo.apisIntegrations.description":
+      "I develop and integrate APIs that connect products, services, and third-party platforms, enabling reliable data flow and automation across systems.",
+    "whatIDo.saasDevelopment.title": "SaaS Development",
+    "whatIDo.saasDevelopment.description":
+      "I build and maintain SaaS products, from backend architecture to core features, focusing on scalability, performance, and real-world usage.",
     "whatIDo.automation.title": "Automation",
     "whatIDo.automation.description":
-      "I streamline business processes through intelligent automation solutions using Python, APIs, and workflow orchestration tools like n8n and Make. From data processing pipelines to automated reporting systems, I eliminate repetitive tasks.",
-    "whatIDo.devops.title": "DevOps",
-    "whatIDo.devops.description":
-      "I implement robust CI/CD pipelines and cloud infrastructure using Docker, Kubernetes, and modern deployment strategies on AWS and Google Cloud. From containerization to monitoring and scaling, I ensure reliable production environments.",
+      "I create automation solutions that eliminate repetitive work, reduce errors, and save operational time through scripts, APIs, and workflow orchestration.",
 
     // Featured Projects Section
     "projects.title": "Featured Projects",
-    "projects.subtitle": "A selection of my recent work showcasing different technologies and approaches.",
+    "projects.subtitle": "Selected projects focused on backend systems, automation, and SaaS development.",
     "projects.viewProject": "View Project",
     "projects.viewAll": "View All Projects",
 
@@ -61,7 +61,6 @@ const translations = {
     "contact.responseTimeValue": "Usually within 24 hours",
     "contact.form.name": "Name",
     "contact.form.email": "Email",
-    "contact.form.whatsapp": "WhatsApp",
     "contact.form.subject": "Subject",
     "contact.form.message": "Message",
     "contact.form.namePlaceholder": "Your name",
@@ -97,9 +96,9 @@ const translations = {
     // Hero Section
     "hero.greeting": "Olá, eu sou",
     "hero.name": "Davi Ramos",
-    "hero.title": "Especialista em Desenvolvimento e Automação",
+    "hero.title": "Engenheiro de Software | Backend & Automação",
     "hero.description":
-      "Eu crio soluções digitais que otimizam fluxos de trabalho e dão vida às ideias. Especializado em desenvolvimento web moderno, automação de processos e criação de experiências de usuário perfeitas.",
+      "Eu construo e mantenho produtos SaaS, sistemas backend, APIs e automação que suportam casos de uso escaláveis e reais.",
     "hero.available": "Disponível para novos projetos",
     "hero.viewWork": "Ver Meu Trabalho",
     "hero.connectWith": "Conecte-se comigo:",
@@ -108,23 +107,23 @@ const translations = {
 
     // What I Do Section
     "whatIDo.title": "O Que Eu Faço",
-    "whatIDo.subtitle": "Eu me especializo em criar soluções digitais que geram resultados e otimizam processos.",
-    "whatIDo.webDev.title": "Desenvolvimento Web",
-    "whatIDo.webDev.description":
-      "Eu crio aplicações web modernas e responsivas usando tecnologias de ponta. De landing pages elegantes a aplicações full-stack complexas, foco em performance, experiência do usuário e arquitetura de código limpo.",
-    "whatIDo.mobileDev.title": "Desenvolvimento Mobile",
-    "whatIDo.mobileDev.description":
-      "Eu desenvolvo aplicações mobile multiplataforma usando React Native e Expo, entregando performance nativa no iOS e Android. Do conceito ao deploy na app store, eu cuido de todo o ciclo de desenvolvimento mobile.",
+    "whatIDo.subtitle": "Eu construo sistemas backend, APIs e automação que suportam produtos SaaS escaláveis.",
+    "whatIDo.backendEngineering.title": "Engenharia Backend",
+    "whatIDo.backendEngineering.description":
+      "Eu projeto e construo sistemas backend que lidam com lógica de negócio real, integridade de dados e escalabilidade. Focado em APIs, autenticação, integrações e manutenibilidade a longo prazo.",
+    "whatIDo.apisIntegrations.title": "APIs & Integrações",
+    "whatIDo.apisIntegrations.description":
+      "Eu desenvolvo e integro APIs que conectam produtos, serviços e plataformas de terceiros, permitindo fluxo de dados confiável e automação entre sistemas.",
+    "whatIDo.saasDevelopment.title": "Desenvolvimento SaaS",
+    "whatIDo.saasDevelopment.description":
+      "Eu construo e mantenho produtos SaaS, desde arquitetura backend até funcionalidades principais, focando em escalabilidade, performance e uso no mundo real.",
     "whatIDo.automation.title": "Automação",
     "whatIDo.automation.description":
-      "Eu otimizo processos de negócio através de soluções de automação inteligente usando Python, APIs e ferramentas de orquestração de workflow como n8n e Make. De pipelines de processamento de dados a sistemas de relatórios automatizados, eu elimino tarefas repetitivas.",
-    "whatIDo.devops.title": "DevOps",
-    "whatIDo.devops.description":
-      "Eu implemento pipelines CI/CD robustos e infraestrutura em nuvem usando Docker, Kubernetes e estratégias modernas de deploy na AWS e Google Cloud. Da containerização ao monitoramento e escalonamento, eu garanto ambientes de produção confiáveis.",
+      "Eu crio soluções de automação que eliminam trabalho repetitivo, reduzem erros e economizam tempo operacional através de scripts, APIs e orquestração de workflows.",
 
     // Featured Projects Section
     "projects.title": "Projetos em Destaque",
-    "projects.subtitle": "Uma seleção dos meus trabalhos recentes mostrando diferentes tecnologias e abordagens.",
+    "projects.subtitle": "Projetos selecionados focados em sistemas backend, automação e desenvolvimento SaaS.",
     "projects.viewProject": "Ver Projeto",
     "projects.viewAll": "Ver Todos os Projetos",
 
@@ -139,12 +138,10 @@ const translations = {
     "contact.responseTimeValue": "Geralmente em até 24 horas",
     "contact.form.name": "Nome",
     "contact.form.email": "Email",
-    "contact.form.whatsapp": "WhatsApp",
     "contact.form.subject": "Assunto",
     "contact.form.message": "Mensagem",
     "contact.form.namePlaceholder": "Seu nome",
     "contact.form.emailPlaceholder": "seu@email.com",
-    "contact.form.whatsappPlaceholder": "+55 (11) 99999-9999",
     "contact.form.subjectPlaceholder": "Consulta sobre projeto",
     "contact.form.messagePlaceholder": "Conte-me sobre seu projeto...",
     "contact.form.send": "Enviar Mensagem",
